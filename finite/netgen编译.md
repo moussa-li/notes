@@ -3,6 +3,42 @@
 
 **Cmake版本**:3.22.1
 
+#还是直接用官网的编译方法
+
+## 安装依赖
+```bash 
+sudo apt-get update && sudo apt-get -y install python3 python3-distutils python3-tk libpython3-dev libxmu-dev tk-dev tcl-dev cmake git g++ libglu1-mesa-dev liblapacke-dev
+```
+
+## 获取源码
+```bash
+export BASEDIR=~/ngsuite
+mkdir -p $BASEDIR
+cd $BASEDIR
+git clone https://github.com/NGSolve/ngsolve.git ngsolve-src
+```
+## 还有一些源码的验证
+```bash
+cd $BASEDIR/ngsolve-src
+git submodule update --init --recursive
+```
+
+## cmake
+```bash 
+cd $BASEDIR/ngsolve-build
+cmake -DCMAKE_INSTALL_PREFIX=${BASEDIR}/ngsolve-install ${BASEDIR}/ngsolve-src
+```
+
+## build
+```bash
+make
+make install
+```
+
+####下面这个方法不太行
+---
+
+
 ## 下载编译tcl/tk
 **tcl**:工具控制语言
 
