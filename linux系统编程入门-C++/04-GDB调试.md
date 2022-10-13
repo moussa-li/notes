@@ -7,7 +7,7 @@
 
 ## GDB使用
 ### 启动
-gcc -o test.c test -g
+gcc -o test test.c -g
 gdb test
 
 ### 给程序设置参数
